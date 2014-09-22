@@ -559,7 +559,100 @@ ServiceStatus.TvIssuesController = Em.ArrayController.extend({
 
 ---
 
-#[fit]no ui error logging
+#lightbulb moments
+#[fit]didn't stop
+#there
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-6-off.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtNi1vZmYucG5nIiwiZXhwaXJlcyI6MTQxMjAyNDY5MX0%3D--d702f1d9a04e2665864a0a9647ad027a90248e29)
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-6-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtNi1vbi5wbmciLCJleHBpcmVzIjoxNDEyMDI0NzMzfQ%3D%3D--9ca4b3635d00715ab393202ae4a8125fb7875961)
+
+---
+
+#leave your assumptions
+#at the door
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-6-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtNi1vbi5wbmciLCJleHBpcmVzIjoxNDEyMDI0NzMzfQ%3D%3D--9ca4b3635d00715ab393202ae4a8125fb7875961)
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/ember_vs_rails_-_1.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2VtYmVyX3ZzX3JhaWxzXy1fMS5wbmciLCJleHBpcmVzIjoxNDEyMDI3MDk3fQ%3D%3D--d54ec580743807dbd08aa24f3cbb7375f89f871b)
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/ember_vs_rails_-_2.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2VtYmVyX3ZzX3JhaWxzXy1fMi5wbmciLCJleHBpcmVzIjoxNDEyMDI3MTA4fQ%3D%3D--8d309a8af9b3f8dcb7f33c0b9662e6c5409f43c0)
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/ember_vs_rails_-_3.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2VtYmVyX3ZzX3JhaWxzXy1fMy5wbmciLCJleHBpcmVzIjoxNDEyMDI3MTU5fQ%3D%3D--7f86065da66fcf5ce464a09c7e154106f9cf0ef2)
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/ember_vs_rails_-_4.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2VtYmVyX3ZzX3JhaWxzXy1fNC5wbmciLCJleHBpcmVzIjoxNDEyMDI3MTY5fQ%3D%3D--32378c63f122b6c088c3a5479ea26edc575a65f8)
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/ember_vs_rails_-_5.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2VtYmVyX3ZzX3JhaWxzXy1fNS5wbmciLCJleHBpcmVzIjoxNDEyMDI3MTc4fQ%3D%3D--502cfa104de70ffe78e24de69e44daafb74a1320)
+
+---
+
+![fit](lightbulbs-7-off.png)
+
+---
+
+![fit](lightbulbs-7-on.png)
+
+---
+
+#don't fight the framework
+
+![fit](lightbulbs-7-on.png)
+
+---
+
+> If something feels harder than it should be, it probably is.  You're probably doing it wrong.
+-- Someone Awesome
+
+^
+- god knows we've done our fair share of things wrong.
+- step back and reassess the situation
+- do some more research
+- work out what the bug is in your understanding
+
+---
+
+![fit](lightbulbs-8-off.png)
+
+---
+
+![fit](lightbulbs-8-on.png)
+
+---
+
+#ui error logging
+
+![fit](lightbulbs-8-on.png)
+
+---
+
+#ui error logging
+
+```javascript
+Ember.onerror = handleError;
+
+Ember.RSVP.on('error', handleError);
+
+function handleError(error) {
+  Em.$.ajax('/error', {
+    type: 'POST',
+    data: { stack: error.stack }
+  });
+}
+```
 
 ---
 
@@ -797,3 +890,7 @@ Feedback
 - Expand on why leave assumptions at the door
 
 - Important to understand the ember lifecycle.  Maybe this is something to talk about
+
+- build tools
+
+- deployment
