@@ -65,11 +65,13 @@
 #[fit]browser dev boiled down
 ####(shamelessley borrowed from @ryanflorence)
 
-- interacting with data stores
-- rendering data to ui
-- responding to user interaction
-- router & urls
-- project stuff: file organisation, build tools etc
+###interacting with data stores
+###rendering data to ui
+###responding to user interaction
+###router & urls
+###project stuff: file organisation, build tools etc
+
+^the way I see it, browser dev breaks down like this
 
 ---
 
@@ -77,31 +79,57 @@
 
 ---
 
-#[fit]**why we chose ember**
+#[fit]our journey with
 
-#[fit]how ember makes our life better
+#[fit]**ember**
 
-#[fit]**what we learnt**
+^
+- this is our journey using a JS MVC framework
+- It just happens to be ember
+
+---
+
+#[fit]**lightbulb** moments
+
+^
+- share with you some of the lightbulb moments we have had in the journey
 
 ---
 
 #[fit]we didn't just jump in
 
+^
+- various reasons
+- time pressures/deadlines
+- lack of confidence and experience in JS
+
 ---
 
-#[fit]we needed to validate the switch
+#we needed to
+
+#[fit]**validate**
+
+#the switch
 
 ---
 
 ![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-0.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMC5wbmciLCJleHBpcmVzIjoxNDExOTM1NzExfQ%3D%3D--57b96f8172e38b11566aaf825a4c4ea0d2013fd8)
 
+^
+we needed to wait...
+
 ---
 
 ![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-5.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtNS5wbmciLCJleHBpcmVzIjoxNDExOTM1NzM3fQ%3D%3D--809ace6ad4c95bfb443701e36694ad716d61ee85)
 
+^
+...for the lights to go on
+
+^for the moments when we thought 'hell yeh, we need to make the switch'
+
 ---
 
-#[fit]Service Status
+#Service Status
 
 ___
 
