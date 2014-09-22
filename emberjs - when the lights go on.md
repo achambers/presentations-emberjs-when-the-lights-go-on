@@ -131,103 +131,13 @@ we needed to wait...
 
 #Service Status
 
-___
-
-![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/01-editor-create-issue.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyLzAxLWVkaXRvci1jcmVhdGUtaXNzdWUucG5nIiwiZXhwaXJlcyI6MTQxMTkzNjQ5N30%3D--822716c70d052354b45b1ef02b5390b243341f5c)
-
----
-
-![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/01-ss-issues-only.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyLzAxLXNzLWlzc3Vlcy1vbmx5LnBuZyIsImV4cGlyZXMiOjE0MTE5MzYzMDN9--67312407d2a2523c4d82c79b7de4d633d7fdaea9)
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/02-ss-now.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyLzAyLXNzLW5vdy5wbmciLCJleHBpcmVzIjoxNDExOTM3MzkyfQ%3D%3D--fa29f70e4cd7b07b28be743b08d0a338761c62a9)
 
 ___
 
-```javascript
-// app/assets/javascripts/application.js
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/02-ss-now.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyLzAyLXNzLW5vdy5wbmciLCJleHBpcmVzIjoxNDExOTM3MzkyfQ%3D%3D--fa29f70e4cd7b07b28be743b08d0a338761c62a9)
 
-//= require jquery
-//= require jquery_ujs
-//= require_tree .
-
-(function() {
-
-  $(function() {
-    bindViewMoreDetailsLinks();
-    toggleElementsForEditors();
-
-    GeoLocation.matchCookieToUrl();
-    Masthead.init();
-  });
-
-  function bindViewMoreDetailsLinks() {
-    $('.more-details').hide();
-
-    $('.view-more').click(function(e) {
-      e.preventDefault();
-
-      var viewMoreLink = $(this);
-      var moreDetails = viewMoreLink.parents('.issue').find('.more-details');
-
-      if (moreDetails.is(':visible')) {
-        moreDetails.hide();
-        viewMoreLink.text('More details');
-      } else {
-        moreDetails.show();
-        viewMoreLink.text('Less details');
-      }
-
-      viewMoreLink.toggleClass('opened');
-    });
-  }
-
-  function toggleElementsForEditors() {
-    $.ajax({
-      url: '/sessions/current',
-      dataType: 'json',
-      success: function(data) {
-        var loggedInStatus = data.logged_in;
-        toggleNewIssueLink(loggedInStatus);
-        toggleHeader(loggedInStatus);
-        toggleAdditionalLinks(loggedInStatus);
-        toggleSidebar(loggedInStatus);
-        toggleFooter(loggedInStatus);
-        toggleEditIssueLinks(loggedInStatus);
-        toggleResolveIssueLinks(loggedInStatus);
-      }
-    });
-  }
-
-  function toggleNewIssueLink(loggedInStatus) {
-    $('aside.editor-actions').toggleClass('hidden', !loggedInStatus);
-  }
-
-  function toggleHeader(loggedInStatus) {
-    $('#skycom-masthead-wrapper').toggleClass('hidden', loggedInStatus);
-  }
-
-  function toggleAdditionalLinks(loggedInStatus) {
-    $('.additional-links').toggleClass('hidden', loggedInStatus);
-  }
-
-  function toggleSidebar(loggedInStatus) {
-    $('.sidebar').toggleClass('hidden', loggedInStatus);
-  }
-
-  function toggleFooter(loggedInStatus) {
-    $('#skycom-footer-wrapper').toggleClass('hidden', loggedInStatus);
-  }
-
-  function toggleEditIssueLinks(loggedInStatus) {
-    $('.btn.edit-issue').toggleClass('hidden', !loggedInStatus);
-  }
-
-  function toggleResolveIssueLinks(loggedInStatus) {
-    $('.btn.resolve-issue').toggleClass('hidden', !loggedInStatus);
-  }
-
-})();
-```
-
----
+___
 
 ```javascript
 // app/assets/javascripts/application.js
@@ -253,6 +163,10 @@ function bindViewMoreDetailsLinks() {
   });
 }
 ```
+
+^
+- standard Rails app
+- we had a small amount of JS
 
 ---
 
@@ -319,103 +233,24 @@ function toggleResolveIssueLinks(loggedInStatus) {
 
 ---
 
-#moving forward in time
-
-#[fit]enter AV
-
----
-
-![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/02-ss-now.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyLzAyLXNzLW5vdy5wbmciLCJleHBpcmVzIjoxNDExOTM3MzkyfQ%3D%3D--fa29f70e4cd7b07b28be743b08d0a338761c62a9)
-
----
-
 ```javascript
 // app/views/issues/index.html.haml
 
-:javascript
-  function microfilterCheck() {
-    var deferred = $.Deferred();
+function microfilterCheck() {
+  var deferred = $.Deferred();
 
-    $.getJSON('/sessions/current', function(json) {
-      if (json.logged_in) {
-        deferred.resolve()
-      } else {
-        Hub.runMicrofilterTest()
-          .done(function() { deferred.reject();  })
-          .fail(function() { deferred.resolve(); });
-      }
-    });
-
-    return deferred;
-  }
-
-  function restrictionCheck() {
-    var deferred = $.Deferred();
-
-    $.getJSON('/customers/current', function(json) {
-      if (json.customer.has_debt_restriction) {
-        deferred.reject('debt');
-      } else if (json.customer.has_high_spend_restriction) {
-        deferred.reject('spend');
-      } else {
-        deferred.resolve();
-      }
-    }, function() {
-      deferred.resolve();
-    });
-
-    return deferred;
-  }
-
-  function showIssues() {
-    $('.issues').toggleClass('hidden');
-    $('.status-message').toggleClass('hidden');
-    $('.checking-service-message').toggleClass('hidden');
-  };
-
-  $(function() {
-    var microfilterDeferred = microfilterCheck()
-    var restrictionDeferred = restrictionCheck()
-
-    $.when(microfilterDeferred, restrictionDeferred).always(function() {
-      var args = Array.prototype.slice.call(arguments);
-
-      if (restrictionDeferred.state() == 'rejected') {
-        if (args.indexOf('spend') !== -1) {
-          $('.high-spend-restriction-alert').removeClass('hidden');
-        } else if (args.indexOf('debt') !== -1) {
-          $('.debt-restriction-alert').removeClass('hidden');
-        }
-      } else if (microfilterDeferred.state() == 'rejected') {
-        $('.microfilter-alert').removeClass('hidden');
-      }
-
-      showIssues();
-    });
+  $.getJSON('/sessions/current', function(json) {
+    if (json.logged_in) {
+      deferred.resolve()
+    } else {
+      Hub.runMicrofilterTest()
+        .done(function() { deferred.reject();  })
+        .fail(function() { deferred.resolve(); });
+    }
   });
-```
 
----
-
-```javascript
-// app/views/issues/index.html.haml
-
-:javascript
-  function microfilterCheck() {
-    var deferred = $.Deferred();
-
-    $.getJSON('/sessions/current', function(json) {
-      if (json.logged_in) {
-        deferred.resolve()
-      } else {
-        Hub.runMicrofilterTest()
-          .done(function() { deferred.reject();  })
-          .fail(function() { deferred.resolve(); });
-      }
-    });
-
-    return deferred;
-  }
+  return deferred;
+}
 ```
 
 ---
@@ -446,12 +281,6 @@ function restrictionCheck() {
 
 ```javascript
 // app/views/issues/index.html.haml
-
-function showIssues() {
-  $('.issues').toggleClass('hidden');
-  $('.status-message').toggleClass('hidden');
-  $('.checking-service-message').toggleClass('hidden');
-};
 
 $(function() {
   var microfilterDeferred = microfilterCheck()
@@ -488,10 +317,9 @@ $(function() {
 ```javascript
 // app/views/issues/index.html.haml
 
-:javascript
-  $(function() {
-    IssuesIndexController.init();
-  });
+$(function() {
+  IssuesIndexController.init();
+});
 ```
 
 ---
@@ -535,17 +363,17 @@ var User = {
 
 var Diagnostics = {
   run: function() {
-    var deferred = $.Deferred();
+    //run some diagnostics goodness
+  }
+}
 
-    $.when(Hub.runMicrofilterTest(), CBS.runCustomerChecks()).done(function(microfilterResult, customerCheckResults) {
-      deferred.resolve(Diagnostics.merge(microfilterResult, customerCheckResults));
-    });
+// app/assets/javascripts/CBS.js
 
-    return deferred.promise();
-  },
-
-  merge: function(first, second) {
-    return _.extend({}, first, second);
+var CBS = {
+  run: function() {
+    //run some monstrosity of a service,
+    //return a massive payload we don't need
+    //and take forever to do so
   }
 }
 ```
@@ -557,6 +385,8 @@ var Diagnostics = {
 ---
 
 #models
+#&
+#interacting with data stores
 
 ![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-3.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMy5wbmciLCJleHBpcmVzIjoxNDExOTM5ODYxfQ%3D%3D--dc02af142a0ed9a885179019893e543f7a49cf93)
 
@@ -570,23 +400,11 @@ var Diagnostics = {
     render: function() {
       this._showIssues();
       this._toggleStatusMessage();
-    },
-
-    _showIssues: function() {
-      $('.products').removeClass('hidden');
-      $('.issues').removeClass('hidden');
-    },
-
-    _toggleStatusMessage: function() {
-      $('.status-message').toggleClass('hidden');
     }
+    // ...snip...
   };
 })();
-```
 
----
-
-```javascript
 // app/assets/javascripts/views/DebtAlertView.js
 
 (function() {
@@ -596,23 +414,8 @@ var Diagnostics = {
       this._hideProducts();
       this._hideSidebar();
       this._informScreenReader();
-    },
-
-    _showAlert: function() {
-      $('.debt-alert').removeClass('hidden');
-    },
-
-    _hideProducts: function() {
-      $('.products').addClass('hidden');
-    },
-
-    _hideSidebar: function() {
-      $('.sidebar .get-in-touch, .sidebar .related-articles').addClass('hidden');
-    },
-
-    _informScreenReader: function() {
-      $('#accessible').text("You have an alert");
     }
+    // ...snip...
   };
 })();
 ```
@@ -666,18 +469,93 @@ var Diagnostics = {
 
 ---
 
-#[fit]inconsitent naming
+> Use a framework, or don't.  Either way, you will.
+-- Someone Awesome
+
+^
+so we switched to Ember and we started to see the improvements immediately
 
 ---
 
-#[fit]globals everywhere
+#consistent naming
+
+### `Diagnostics.js`
+### `issues_index_controller.js`
 
 ---
 
-#[fit]inconsistent execution of scripts
-###on document ready
-###on script load
-###who bloody knows when else
+#consistent naming
+
+### `controllers/alert.js`
+### `controllers/tv_issues.js`
+### `views/issues_list.js`
+### `models/issue.js`
+### `models/product.js`
+
+---
+
+#no more globals
+
+```javascript
+var Diagnostics = {
+  run: function() {
+    // do stuff
+  }
+};
+
+window.IssuesIndexController = {
+  init: function() {
+    // do stuff;
+  }
+};
+```
+
+---
+
+#no more globals
+
+```javascript
+ServiceStatus.GoIssuesController = Em.ArrayController.extend({
+  status: function() {
+    //do stuff
+  }.property('hasProblem')
+});
+
+ServiceStatus.Outage = DS.Model.extend({
+  //attributes here
+});
+
+ServiceStatus.SsAccordionComponent = Em.Component.extend({
+  collapsed: false,
+  //other properties here
+});
+```
+
+---
+
+#data binding
+
+```javascript
+// models/tv_issue.js
+
+ServiceStatus.TvIssue = DS.Model.extend(
+  name: DS.attr('string')
+);
+
+// controllers.tv_issues.js
+
+ServiceStatus.TvIssuesController = Em.ArrayController.extend({
+});
+```
+
+```handlebars
+<!-- templates/tv_issues.hbs -->
+<ul>
+  <#each>
+  <li>{{name}}</li>
+  </each>
+</ul>
+```
 
 ---
 
