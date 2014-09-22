@@ -1,3 +1,6 @@
+
+---
+
 #[fit]how ember saved my life
 
 ###@grandazz
@@ -6,6 +9,21 @@
 ---
 
 ![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/tweet-modified.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL3R3ZWV0LW1vZGlmaWVkLnBuZyIsImV4cGlyZXMiOjE0MTE5MzM2NTJ9--3b313bbee535fdc0444a3c95b6b65babe71d6eed)
+
+---
+
+#[fit]how ember saved my life
+
+###@grandazz
+###github.com/achambers
+
+---
+
+
+#[fit]~~how ember saved my life~~
+
+###@grandazz
+###github.com/achambers
 
 ---
 
@@ -23,6 +41,16 @@
 ---
 
 ![fit](http://cdn.visualnews.com/wp-content/uploads/2013/05/photoshopchimera-2.jpg)
+
+---
+
+##Noah update
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/noah.jpg?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL25vYWguanBnIiwiZXhwaXJlcyI6MTQxMjAxNjg4MX0%3D--b24bca6bd92c23551e7acf375773871305de0914)
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/noah.jpg?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL25vYWguanBnIiwiZXhwaXJlcyI6MTQxMjAxNjg4MX0%3D--b24bca6bd92c23551e7acf375773871305de0914)
 
 ---
 
@@ -257,7 +285,7 @@ function toggleResolveIssueLinks(loggedInStatus) {
 
 ---
 
-#data based ui maniulation
+#data based ui manipulation
 
 ![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-1.jpg?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMS5qcGciLCJleHBpcmVzIjoxNDExOTM3MDMxfQ%3D%3D--01d707388d6e5d9b6c79c981b68c2e15efe87a08)
 
@@ -574,7 +602,7 @@ var Diagnostics = {
 ---
 
 ```handlebars
-// app/assets/javascripts/templates/outages.hbs
+{!-- app/assets/javascripts/templates/outages.hbs --}}
 
 {{#each outages}}
   <article class="issue">
@@ -629,6 +657,198 @@ var Diagnostics = {
 
 ---
 
+#[fit]so, how
+
+#[fit]does *ember*
+
+#[fit]make our lives better?
+
+---
+
+#[fit]file organisation
+
+---
+
+#file organisation
+
+```bash
+- /app
+  - /components
+  - /controllers
+  - /helpers
+  - /models
+  - /routes
+  - /styles
+  - /templates
+  - /views
+  - app.js
+  - index.html
+  - router.js
+```
+
+---
+
+#[fit]convention
+
+#[fit]**over**
+
+#[fit]configuration
+
+---
+
+```javascript
+this.resource('posts', { path: '/posts' })
+```
+
+# PostsRoute
+# PostsController
+# PostsView
+# posts handlebars template
+
+---
+
+#[fit]build tools
+
+---
+
+#build tools
+
+- broccoli
+- ES6 modules
+- live reload
+- api-stub
+- test harness
+
+---
+
+#[fit]testing
+
+---
+
+#testing
+
+- `visit(url)`
+- `fillIn(selector, text)`
+- `click(selector)`
+- `keyEvent(selector, type, keyCode)`
+- `triggerEvent(selector, type, options)`
+
+---
+
+#[fit]computed properties
+
+---
+
+#computed properties
+
+```javascript
+// app/controllers/shape.js
+import Em from 'ember';
+
+export default Em.ObjectController.extend({
+  area: function() {
+    var width  = this.get('width');
+    var height = this.get('height');
+
+    return width * height;
+  }.property('width', 'height')
+});
+```
+
+```handlebars
+<!-- app/templates/shape.hbs -->
+
+<span>Area of the rectangle is {{area}}</span>
+```
+
+---
+
+#[fit]routing
+
+---
+
+#routing
+
+```javascript
+// app/router.js
+
+Router.map(function() {
+  this.resource('posts', function() {
+    this.resource('post', function() {
+      this.route('new');
+    });
+  });
+});
+```
+
+---
+
+#[fit]components
+
+---
+
+```handlebars
+{!-- demo.hbs --}
+
+{{useless-text soText="Ember" suchText="Awesome"}}
+
+
+
+{!-- components/useless-text.hbs --}
+
+<h1>wow, so <strong>{{soText}}</strong> such <strong>{{suchText}}</strong></h1>
+
+^Talk about how JS comes with the template as well.  Just that I'm not showing it
+```
+
+#wow, so **Ember** such **Awesome**
+
+---
+
+#[fit]ember data
+
+---
+
+#[fit]separation of
+
+#[fit]ui and api
+
+---
+
+#[fit]XXXXXXX Anything else?
+
+---
+
+#[fit]what did we learn?
+
+---
+
+#[fit]leave your assumptions
+
+#[fit]at the door
+
+---
+
+#leave your assumptions at the door
+
+---
+
+#[fit]don't fight the framework
+
+---
+
+#[fit]wait for the lights
+
+^example of using ember data vs not
+
+---
+
+#[fit]router is about nested templates
+
+#[fit]not necissarily nexted urls
+
+---
+
 
 
 
@@ -643,3 +863,31 @@ Notes
 - Different naming standards.....Uppercasde.lowercase etc
 
 - Transition between pages instead of just hide and show stuff.  Debt alert originally just hid stuff on the page
+
+
+
+
+
+---
+
+Feedback
+
+- Go quicker through code examples.  Take time with the first and maybe second then shoot through
+
+- Using a framework is good.  But there are other things that are important like testing etc
+
+- Use a framework, don't fight the framework, use what is needed in the framework
+
+- More info on Ember CLI
+
+- We should be treating front end dev as we do server side dev
+
+- How many lights do you have on?  I don't fight the framework etc etc.
+
+- Quick joiners don't take long to learn Ember - back this up with data
+
+- Talk more about how I think the authors of ember are really trying to push the web forward
+
+- Expand on why leave assumptions at the door
+
+- Important to understand the ember lifecycle.  Maybe this is something to talk about
