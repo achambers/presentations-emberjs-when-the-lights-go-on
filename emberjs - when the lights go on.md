@@ -600,17 +600,17 @@ ServiceStatus.TvIssuesController = Em.ArrayController.extend({
 
 ---
 
-![fit](lightbulbs-7-off.png)
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-7-off.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtNy1vZmYucG5nIiwiZXhwaXJlcyI6MTQxMjAyODAyOX0%3D--abfe51afdacb22fa4beba617eb6a6ce32bc6b2c4)
 
 ---
 
-![fit](lightbulbs-7-on.png)
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-7-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtNy1vbi5wbmciLCJleHBpcmVzIjoxNDEyMDI4MDk2fQ%3D%3D--f776019c469239ccaf49b53a708b7d96796169c9)
 
 ---
 
 #don't fight the framework
 
-![fit](lightbulbs-7-on.png)
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-7-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtNy1vbi5wbmciLCJleHBpcmVzIjoxNDEyMDI4MDk2fQ%3D%3D--f776019c469239ccaf49b53a708b7d96796169c9)
 
 ---
 
@@ -625,17 +625,17 @@ ServiceStatus.TvIssuesController = Em.ArrayController.extend({
 
 ---
 
-![fit](lightbulbs-8-off.png)
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-8-off.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtOC1vZmYucG5nIiwiZXhwaXJlcyI6MTQxMjAyODIzMH0%3D--7d9c6c8a09c5aaa4fa38d11afe302802be0d4ce0)
 
 ---
 
-![fit](lightbulbs-8-on.png)
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-8-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtOC1vbi5wbmciLCJleHBpcmVzIjoxNDEyMDI4MjczfQ%3D%3D--8f2b70b33d61891d4ec5c6e988f83d78f9d151a9)
 
 ---
 
 #ui error logging
 
-![fit](lightbulbs-8-on.png)
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-8-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtOC1vbi5wbmciLCJleHBpcmVzIjoxNDEyMDI4MjczfQ%3D%3D--8f2b70b33d61891d4ec5c6e988f83d78f9d151a9)
 
 ---
 
@@ -656,13 +656,135 @@ function handleError(error) {
 
 ---
 
-#[fit]so, how
-
-#[fit]does *ember*
-
-#[fit]make our lives better?
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-9-off.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtOS1vZmYucG5nIiwiZXhwaXJlcyI6MTQxMjAzMTY3NX0%3D--40bd5b3c4f03f6448a418f3212b47cf281c1a668)
 
 ---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-9-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtOS1vbi5wbmciLCJleHBpcmVzIjoxNDEyMDMxNjkzfQ%3D%3D--c38f98ae11266bc8b51a06fcf7759ad4ea8b04b6)
+
+---
+
+#separation of
+#ui and api
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-9-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtOS1vbi5wbmciLCJleHBpcmVzIjoxNDEyMDMxNjkzfQ%3D%3D--c38f98ae11266bc8b51a06fcf7759ad4ea8b04b6)
+
+---
+
+#separation of ui and api
+
+XXXXX Not sure what to write here
+
+^
+- instead of thinking of your app as a way of visualising the data in the database
+- you think of your api as a json representation of your data.  And your ui as one of mnay potential clients that can visualise
+that data.
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-10-off.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTAtb2ZmLnBuZyIsImV4cGlyZXMiOjE0MTIwMzE3ODd9--b1559c49b80d8aa55e9e5945f700553e2a354f42)
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-10-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTAtb24ucG5nIiwiZXhwaXJlcyI6MTQxMjAzMTgwM30%3D--15647b50a5f4f10596ce1ba545d0d9f5a91c228d)
+
+---
+
+#let your client
+#define the api
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-10-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTAtb24ucG5nIiwiZXhwaXJlcyI6MTQxMjAzMTgwM30%3D--15647b50a5f4f10596ce1ba545d0d9f5a91c228d)
+
+---
+
+#[fit]prototype with DS.FixtureAdapter
+
+^
+- build your ui well with resources defined well
+- let ember tell you what it expects from the api
+- designed by Yehdua who is one of the main proponents of jsonapi.org
+- they are trying to adhere to best practices
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-11-off.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTEtb2ZmLnBuZyIsImV4cGlyZXMiOjE0MTIwMzIxNDB9--6bc0681b68a3f56d0c085d93a98863fbe08090e4)
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-11-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTEtb24ucG5nIiwiZXhwaXJlcyI6MTQxMjAzMjE2M30%3D--299834d6d168ba32828bb9e1fcc9c577bf92a285)
+
+---
+
+#deployment
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-11-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTEtb24ucG5nIiwiZXhwaXJlcyI6MTQxMjAzMjE2M30%3D--299834d6d168ba32828bb9e1fcc9c577bf92a285)
+
+---
+
+#[fit]deploying to heroku
+
+#[fit]and serving from rails
+
+#[fit]is cool and all
+
+---
+
+#[fit]but we've been doing that for
+
+#[fit]a long time
+
+---
+
+#[fit]we can do
+
+#[fit]better
+
+---
+
+#[fit]what if every branch you pushed
+
+#[fit]was deployed and accessible within seconds?
+
+---
+
+#an ember app is only a bunch of static files
+
+---
+
+#static assets stored on S3
+
+#index.html stored in Redis
+
+#express server serves requested index.html
+
+---
+
+#deployment
+
+```bash
+GET http://sky.com #-> current live site
+
+GET http://sky.com?branch=test-feature #-> index.html pointing to test-feature assets
+
+ember activate --branch test-feature
+
+GET http://sky.com #-> index.html from test-feature branch is now the live site
+```
+
+---
+
+![fit](://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-12-off.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTItb2ZmLnBuZyIsImV4cGlyZXMiOjE0MTIwMzMwMjd9--cdc529a1235ca6514e25a06c7e09eeac657ba658)
+
+---
+
+
+
+
+
+
+
+
+
 
 #[fit]file organisation
 
@@ -808,12 +930,6 @@ Router.map(function() {
 
 ---
 
-#[fit]separation of
-
-#[fit]ui and api
-
----
-
 #[fit]XXXXXXX Anything else?
 
 ---
@@ -894,3 +1010,5 @@ Feedback
 - build tools
 
 - deployment
+
+- pact file testing
