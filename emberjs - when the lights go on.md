@@ -563,6 +563,9 @@ ServiceStatus.TvIssuesController = Em.ArrayController.extend({
 #[fit]didn't stop
 #there
 
+^
+- what we didn't anticipate was the lightbulb moments we'd continue to get
+
 ---
 
 ![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-6-off.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtNi1vZmYucG5nIiwiZXhwaXJlcyI6MTQxMjAyNDY5MX0%3D--d702f1d9a04e2665864a0a9647ad027a90248e29)
@@ -875,6 +878,65 @@ that data.
 
 ---
 
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/deployment-stage1.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2RlcGxveW1lbnQtc3RhZ2UxLnBuZyIsImV4cGlyZXMiOjE0MTIxMDk5MTN9--f6fd5e173730b476b3aaead85eb1d04136697060)
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/deployment-stage2.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2RlcGxveW1lbnQtc3RhZ2UyLnBuZyIsImV4cGlyZXMiOjE0MTIxMDk5MzZ9--721da8a2453ffe613ce505f4bdd134fcb8b11da3)
+
+^
+- this is how most of us probably, currently host our apps.  Even client side ones.
+- but this got us thinking
+
+---
+
+#index.html
+#app-1234.js
+#app-5678.css
+
+^
+- now we are using an MVC framework.
+- our app is just a set of static files
+- and our dev process uses git
+- our workflow makes heavy use of feature branches.
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/deployment-stage3.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2RlcGxveW1lbnQtc3RhZ2UzLnBuZyIsImV4cGlyZXMiOjE0MTIxMDk5NTd9--42be3fd2bc806b16d28eb72b9caf1d89b17c476c)
+
+---
+
+#lets push this
+#[fit]one step further
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/deployment-stage4.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2RlcGxveW1lbnQtc3RhZ2U0LnBuZyIsImV4cGlyZXMiOjE0MTIxMDk5Nzl9--355739e00e7a695ea8b48ca222215caf89a72fa8)
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/deployment-stage5.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2RlcGxveW1lbnQtc3RhZ2U1LnBuZyIsImV4cGlyZXMiOjE0MTIxMDk5OTd9--c7a1b725e027f9e8df0419367c0a953509116065)
+
+---
+
+#[fit]deployment becomes super quick
+
+---
+
+
+#just push some static assets to S3
+
+#and push index.html into redis
+
+---
+
+#[fit]not to mention cutting over
+
+^
+- just update the key of the index.html to index:current
+
+---
+
 ![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-12-off.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTItb2ZmLnBuZyIsImV4cGlyZXMiOjE0MTIwMzMwMjd9--cdc529a1235ca6514e25a06c7e09eeac657ba658)
 
 ---
@@ -883,87 +945,71 @@ that data.
 
 ---
 
-#[fit]pact file testing
+#pact file testing
 
 ![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-12-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTItb24ucG5nIiwiZXhwaXJlcyI6MTQxMjA5NTA3OX0%3D--638cdaabf024a9c6c26b1f24e97f73f4f9a86f62)
 
 ---
 
-Notes
+#[fit]how do we test that changes
 
-- Different ways of defining objects - globals, on SS object.  Also using document ready soemtimes, not others.  Inconsistent.  ember-cli gives you consistency (ES6 modules as well)
+#[fit]to the api
 
-- Different naming standards.....Uppercasde.lowercase etc
+---
 
-- Transition between pages instead of just hide and show stuff.  Debt alert originally just hid stuff on the page
+#[fit]how do we test that changes
 
+#[fit]to the api
 
+#[fit]don't break the ui?
 
+---
 
+> pact (_noun_)
+> A formal agreement between individuals or parties.
+--The Google
+
+---
+
+#[fit]the relationship of the web app consists of:
+
+#[fit]the _consumer_ (ui)
+
+#[fit]the _provider_ (api)
+
+---
+
+#Step 1 - Define the consumer expectations
+
+![inline](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/pact-consumer.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL3BhY3QtY29uc3VtZXIucG5nIiwiZXhwaXJlcyI6MTQxMjExMDAzOH0%3D--11e34ba1d77c45f37619cb48cb1ce367f6d0f283)
+
+---
+
+#Step 2 - Verify expectations on provider
+
+![inline](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/pact-provider.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL3BhY3QtcHJvdmlkZXIucG5nIiwiZXhwaXJlcyI6MTQxMjExMDA1NH0%3D--750255f3d072100f7a1ae3d4b2f4160e7a3f6c6c)
+
+---
+
+#[fit]imagine if
+#CBS
+#[fit]verified their services against our pact files
+#[fit]every time they released?
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/mind-blown.jpg?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL21pbmQtYmxvd24uanBnIiwiZXhwaXJlcyI6MTQxMjExMDA4MH0%3D--84b4c073cd9311cca902e40a88fdda4209db393c)
+
+---
+
+#Thats a wrap
 
 ---
 
 Feedback
 
-- Go quicker through code examples.  Take time with the first and maybe second then shoot through
-
-- Using a framework is good.  But there are other things that are important like testing etc
-
-- Use a framework, don't fight the framework, use what is needed in the framework
-
-- More info on Ember CLI
-
-- We should be treating front end dev as we do server side dev
-
-- How many lights do you have on?  I don't fight the framework etc etc.
-
-- Quick joiners don't take long to learn Ember - back this up with data
-
 - Talk more about how I think the authors of ember are really trying to push the web forward
-
-- Expand on why leave assumptions at the door
 
 - Important to understand the ember lifecycle.  Maybe this is something to talk about
 
-- build tools
-
-- deployment
-
-- pact file testing
-
 - us estub server instead of FixtureAdapter - change slide for this
-
-- remove let client define api
-
----
-
-![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-10-off.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTAtb2ZmLnBuZyIsImV4cGlyZXMiOjE0MTIwMzE3ODd9--b1559c49b80d8aa55e9e5945f700553e2a354f42)
-
----
-
-![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-10-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTAtb24ucG5nIiwiZXhwaXJlcyI6MTQxMjAzMTgwM30%3D--15647b50a5f4f10596ce1ba545d0d9f5a91c228d)
-
----
-
-#let your client
-#define the api
-
-![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-10-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTAtb24ucG5nIiwiZXhwaXJlcyI6MTQxMjAzMTgwM30%3D--15647b50a5f4f10596ce1ba545d0d9f5a91c228d)
-
-^
-ever worked with a team that created a service for you, that didn't do what you needed and didn't return data in the format you wanted?
-
----
-
-#a team that doesn't seem to
-#**C**are
-#'**B**out
-#**S**ervices?
-
----
-
-^
-- build your ui well with resources defined well
-- let ember tell you what it expects from the api
-- designed by Yehdua who is one of the main proponents of jsonapi.org
-- they are trying to adhere to best practices
