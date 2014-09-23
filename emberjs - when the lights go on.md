@@ -671,14 +671,22 @@ function handleError(error) {
 
 ---
 
-#separation of ui and api
-
-XXXXX Not sure what to write here
+#[fit]clearer separation between data
+#[fit]and user interaction
 
 ^
 - instead of thinking of your app as a way of visualising the data in the database
 - you think of your api as a json representation of your data.  And your ui as one of mnay potential clients that can visualise
 that data.
+
+---
+
+> think of your api **not** in terms of ui interactions, but in terms of resources and how they relate to each other
+
+---
+
+#[fit]your app is simply
+#[fit]a client of your api
 
 ---
 
@@ -695,9 +703,17 @@ that data.
 
 ![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-10-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTAtb24ucG5nIiwiZXhwaXJlcyI6MTQxMjAzMTgwM30%3D--15647b50a5f4f10596ce1ba545d0d9f5a91c228d)
 
+^
+ever worked with a team that created a service for you, that didn't do what you needed and didn't return data in the format you wanted?
+
 ---
 
-#[fit]prototype with DS.FixtureAdapter
+#a team that doesn't seem to
+#**C**are
+#'**B**out
+#**S**ervices?
+
+---
 
 ^
 - build your ui well with resources defined well
@@ -773,17 +789,9 @@ GET http://sky.com #-> index.html from test-feature branch is now the live site
 
 ---
 
-![fit](://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-12-off.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTItb2ZmLnBuZyIsImV4cGlyZXMiOjE0MTIwMzMwMjd9--cdc529a1235ca6514e25a06c7e09eeac657ba658)
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-12-off.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTItb2ZmLnBuZyIsImV4cGlyZXMiOjE0MTIwMzMwMjd9--cdc529a1235ca6514e25a06c7e09eeac657ba658)
 
 ---
-
-
-
-
-
-
-
-
 
 
 #[fit]file organisation
@@ -884,56 +892,6 @@ export default Em.ObjectController.extend({
 
 ---
 
-#[fit]routing
-
----
-
-#routing
-
-```javascript
-// app/router.js
-
-Router.map(function() {
-  this.resource('posts', function() {
-    this.resource('post', function() {
-      this.route('new');
-    });
-  });
-});
-```
-
----
-
-#[fit]components
-
----
-
-```handlebars
-{!-- demo.hbs --}
-
-{{useless-text soText="Ember" suchText="Awesome"}}
-
-
-
-{!-- components/useless-text.hbs --}
-
-<h1>wow, so <strong>{{soText}}</strong> such <strong>{{suchText}}</strong></h1>
-
-^Talk about how JS comes with the template as well.  Just that I'm not showing it
-```
-
-#wow, so **Ember** such **Awesome**
-
----
-
-#[fit]ember data
-
----
-
-#[fit]XXXXXXX Anything else?
-
----
-
 #[fit]what did we learn?
 
 ---
@@ -1012,3 +970,7 @@ Feedback
 - deployment
 
 - pact file testing
+
+- us estub server instead of FixtureAdapter - change slide for this
+
+- remove let client define api
