@@ -674,41 +674,30 @@ function handleError(error) {
 
 #[fit]ember-cli
 
----
-
-#ember-cli
-
-```bash
-$ npm install -g ember-cli
-
-$ ember new project-nathan
-```
-
-^
-- before I go on, is everyone here NDA'd?
-- it's ok, you'll find this presentation leaked on telegraph.co.uk tomorrow morning
+###`npm install -g ember-cli`
 
 ---
 
 ####ember-cli
 #file organisation
+####`ember new my-project`
 
 ```bash
-                                         - /app
-                                           - /components
-                                           - /controllers
-                                           - /helpers
-                                           - /models
-                                           - /routes
-                                           - /styles
-                                           - /templates
-                                           - /views
-                                           - app.js
-                                           - index.html
-                                           - router.js
-                                         - /config
-                                         - /public
-                                         - /tests
+                                                     - /app
+                                                       - /components
+                                                       - /controllers
+                                                       - /helpers
+                                                       - /models
+                                                       - /routes
+                                                       - /styles
+                                                       - /templates
+                                                       - /views
+                                                       - app.js
+                                                       - index.html
+                                                       - router.js
+                                                     - /config
+                                                     - /public
+                                                     - /tests
 ```
 
 ^
@@ -726,69 +715,34 @@ if this looks familiar to you who use Rails, that is no coindidence
 ## PostsRoute
 ## PostsController
 ## PostsView
-## posts handlebars template
+## posts.hbs
 
 ---
 
 ####ember-cli
 #es6 modules
 
-```javascript
-// pre es6 modules
-ProjectNathan.TelegraphController = Em.Controller.extend({ });
-
-// with es6 modules
-import Em from 'ember';
-
-export default Em.Controller.extend({ });
-```
+^
+- instead of defining objects on globals
+- export objects and import then where required
 
 ---
 
 ####ember-cli
 #testing
 
-```bash
-ember test
-
-ember test --server
-```
-
 ^
+- test libraries (qunit) and test runner (testem)
 - running through multiple browsers headless with phantomjs
 - http://localhost:4200/tests
 
 ---
 
 ####ember-cli
-#testing
-
-```javascript
-visit(url)
-
-fillIn(selector, text)
-
-click(selector)
-
-keyEvent(selector, type, keyCode)
-
-triggerEvent(selector, type, options)
-```
+#asset pipeline
 
 ^
-- ember is heavily dependent on promises
-- therefore ember testing is promise aware
-- no need to 'wait' for stuff
-
----
-
-####ember-cli
-#live reload
-
----
-
-####ember-cli
-#asset pipeline
+- uses broccoli to compile sass, coffeescript, ember source
 
 ---
 
@@ -835,12 +789,20 @@ that data.
 
 ---
 
-> think of your api **not** in terms of ui interactions, but in terms of resources and how they relate to each other
+> think **not** of your api in terms of ui interactions, but in terms of data and relationships
+
+^
+- I think it's important to stop seeing your api as a way to get a model into your view
+- but to see it as a way to present your domain as data
 
 ---
 
-#[fit]your app is simply
-#[fit]a client of your api
+#[fit]your app is a
+#[fit]client of your api
+
+^
+- and it may not be the only one
+- so think of it as such
 
 ---
 
@@ -849,6 +811,9 @@ that data.
 ---
 
 ![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-11-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTEtb24ucG5nIiwiZXhwaXJlcyI6MTQxMjAzMjE2M30%3D--299834d6d168ba32828bb9e1fcc9c577bf92a285)
+
+^
+- now, these last two things are trying to push the thinking a little bit
 
 ---
 
@@ -878,11 +843,11 @@ that data.
 
 ---
 
-![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/deployment-stage1.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2RlcGxveW1lbnQtc3RhZ2UxLnBuZyIsImV4cGlyZXMiOjE0MTIxMDk5MTN9--f6fd5e173730b476b3aaead85eb1d04136697060)
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/deployment-stage1.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2RlcGxveW1lbnQtc3RhZ2UxLnBuZyIsImV4cGlyZXMiOjE0MTIxMTU1OTV9--c251e24cb6ab599d32f6c4eb39af1fefd8c1cd28)
 
 ---
 
-![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/deployment-stage2.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2RlcGxveW1lbnQtc3RhZ2UyLnBuZyIsImV4cGlyZXMiOjE0MTIxMDk5MzZ9--721da8a2453ffe613ce505f4bdd134fcb8b11da3)
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/deployment-stage2.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2RlcGxveW1lbnQtc3RhZ2UyLnBuZyIsImV4cGlyZXMiOjE0MTIxMTU3MzF9--373f1cf519f89288f5f01e2b2ad5fefd6d0f60d2)
 
 ^
 - this is how most of us probably, currently host our apps.  Even client side ones.
@@ -902,7 +867,7 @@ that data.
 
 ---
 
-![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/deployment-stage3.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2RlcGxveW1lbnQtc3RhZ2UzLnBuZyIsImV4cGlyZXMiOjE0MTIxMDk5NTd9--42be3fd2bc806b16d28eb72b9caf1d89b17c476c)
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/deployment-stage3.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2RlcGxveW1lbnQtc3RhZ2UzLnBuZyIsImV4cGlyZXMiOjE0MTIxMTU3NTB9--e3fc9103f63cdc61defeceee09a90b5ea81b9d48)
 
 ---
 
@@ -911,11 +876,11 @@ that data.
 
 ---
 
-![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/deployment-stage4.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2RlcGxveW1lbnQtc3RhZ2U0LnBuZyIsImV4cGlyZXMiOjE0MTIxMDk5Nzl9--355739e00e7a695ea8b48ca222215caf89a72fa8)
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/deployment-stage4.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2RlcGxveW1lbnQtc3RhZ2U0LnBuZyIsImV4cGlyZXMiOjE0MTIxMTU3NjZ9--db9e87e7cf0cc025bcbc7d27111ec7d23bb1b20e)
 
 ---
 
-![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/deployment-stage5.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2RlcGxveW1lbnQtc3RhZ2U1LnBuZyIsImV4cGlyZXMiOjE0MTIxMDk5OTd9--c7a1b725e027f9e8df0419367c0a953509116065)
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/deployment-stage5.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2RlcGxveW1lbnQtc3RhZ2U1LnBuZyIsImV4cGlyZXMiOjE0MTIxMTU3ODB9--11fc75c396b198e08a27e198a895dc8235d0d086)
 
 ---
 
@@ -1006,10 +971,18 @@ that data.
 
 ---
 
-Feedback
+##@grandazz
 
-- Talk more about how I think the authors of ember are really trying to push the web forward
+##github.com/achambers
 
-- Important to understand the ember lifecycle.  Maybe this is something to talk about
+---
 
-- us estub server instead of FixtureAdapter - change slide for this
+#[fit]any questions?
+
+###@grandazz
+
+###github.com/achambers
+
+---
+
+#[fit]thankyou
