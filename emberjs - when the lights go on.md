@@ -653,7 +653,6 @@ function handleError(error) {
   });
 }
 ```
-
 ---
 
 ![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-9-off.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtOS1vZmYucG5nIiwiZXhwaXJlcyI6MTQxMjAzMTY3NX0%3D--40bd5b3c4f03f6448a418f3212b47cf281c1a668)
@@ -664,10 +663,162 @@ function handleError(error) {
 
 ---
 
+#build tools
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-9-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtOS1vbi5wbmciLCJleHBpcmVzIjoxNDEyMDMxNjkzfQ%3D%3D--c38f98ae11266bc8b51a06fcf7759ad4ea8b04b6)
+
+---
+
+#[fit]ember-cli
+
+---
+
+#ember-cli
+
+```bash
+$ npm install -g ember-cli
+
+$ ember new project-nathan
+```
+
+^
+- before I go on, is everyone here NDA'd?
+- it's ok, you'll find this presentation leaked on telegraph.co.uk tomorrow morning
+
+---
+
+####ember-cli
+#file organisation
+
+```bash
+                                         - /app
+                                           - /components
+                                           - /controllers
+                                           - /helpers
+                                           - /models
+                                           - /routes
+                                           - /styles
+                                           - /templates
+                                           - /views
+                                           - app.js
+                                           - index.html
+                                           - router.js
+                                         - /config
+                                         - /public
+                                         - /tests
+```
+
+^
+if this looks familiar to you who use Rails, that is no coindidence
+
+---
+
+####ember-cli
+#convention over configuration
+
+```javascript
+        this.resource('posts', { path: '/posts' })
+```
+
+## PostsRoute
+## PostsController
+## PostsView
+## posts handlebars template
+
+---
+
+####ember-cli
+#es6 modules
+
+```javascript
+// pre es6 modules
+ProjectNathan.TelegraphController = Em.Controller.extend({ });
+
+// with es6 modules
+import Em from 'ember';
+
+export default Em.Controller.extend({ });
+```
+
+---
+
+####ember-cli
+#testing
+
+```bash
+ember test
+
+ember test --server
+```
+
+^
+- running through multiple browsers headless with phantomjs
+- http://localhost:4200/tests
+
+---
+
+####ember-cli
+#testing
+
+```javascript
+visit(url)
+
+fillIn(selector, text)
+
+click(selector)
+
+keyEvent(selector, type, keyCode)
+
+triggerEvent(selector, type, options)
+```
+
+^
+- ember is heavily dependent on promises
+- therefore ember testing is promise aware
+- no need to 'wait' for stuff
+
+---
+
+####ember-cli
+#live reload
+
+---
+
+####ember-cli
+#asset pipeline
+
+---
+
+####ember-cli
+#generators
+
+---
+
+####ember-cli
+#http-mock server
+
+^
+- a hook in to the development server that mocks out requests
+
+---
+
+####ember-cli
+#addons
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-10-off.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTAtb2ZmLnBuZyIsImV4cGlyZXMiOjE0MTIwMzE3ODd9--b1559c49b80d8aa55e9e5945f700553e2a354f42)
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-10-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTAtb24ucG5nIiwiZXhwaXJlcyI6MTQxMjAzMTgwM30%3D--15647b50a5f4f10596ce1ba545d0d9f5a91c228d)
+
+---
+
 #separation of
 #ui and api
 
-![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-9-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtOS1vbi5wbmciLCJleHBpcmVzIjoxNDEyMDMxNjkzfQ%3D%3D--c38f98ae11266bc8b51a06fcf7759ad4ea8b04b6)
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-10-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTAtb24ucG5nIiwiZXhwaXJlcyI6MTQxMjAzMTgwM30%3D--15647b50a5f4f10596ce1ba545d0d9f5a91c228d)
 
 ---
 
@@ -687,39 +838,6 @@ that data.
 
 #[fit]your app is simply
 #[fit]a client of your api
-
----
-
-![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-10-off.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTAtb2ZmLnBuZyIsImV4cGlyZXMiOjE0MTIwMzE3ODd9--b1559c49b80d8aa55e9e5945f700553e2a354f42)
-
----
-
-![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-10-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTAtb24ucG5nIiwiZXhwaXJlcyI6MTQxMjAzMTgwM30%3D--15647b50a5f4f10596ce1ba545d0d9f5a91c228d)
-
----
-
-#let your client
-#define the api
-
-![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-10-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTAtb24ucG5nIiwiZXhwaXJlcyI6MTQxMjAzMTgwM30%3D--15647b50a5f4f10596ce1ba545d0d9f5a91c228d)
-
-^
-ever worked with a team that created a service for you, that didn't do what you needed and didn't return data in the format you wanted?
-
----
-
-#a team that doesn't seem to
-#**C**are
-#'**B**out
-#**S**ervices?
-
----
-
-^
-- build your ui well with resources defined well
-- let ember tell you what it expects from the api
-- designed by Yehdua who is one of the main proponents of jsonapi.org
-- they are trying to adhere to best practices
 
 ---
 
@@ -757,175 +875,17 @@ ever worked with a team that created a service for you, that didn't do what you 
 
 ---
 
-#[fit]what if every branch you pushed
-
-#[fit]was deployed and accessible within seconds?
-
----
-
-#an ember app is only a bunch of static files
-
----
-
-#static assets stored on S3
-
-#index.html stored in Redis
-
-#express server serves requested index.html
-
----
-
-#deployment
-
-```bash
-GET http://sky.com #-> current live site
-
-GET http://sky.com?branch=test-feature #-> index.html pointing to test-feature assets
-
-ember activate --branch test-feature
-
-GET http://sky.com #-> index.html from test-feature branch is now the live site
-```
-
----
-
 ![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-12-off.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTItb2ZmLnBuZyIsImV4cGlyZXMiOjE0MTIwMzMwMjd9--cdc529a1235ca6514e25a06c7e09eeac657ba658)
 
 ---
 
-
-#[fit]file organisation
-
----
-
-#file organisation
-
-```bash
-- /app
-  - /components
-  - /controllers
-  - /helpers
-  - /models
-  - /routes
-  - /styles
-  - /templates
-  - /views
-  - app.js
-  - index.html
-  - router.js
-```
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-12-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTItb24ucG5nIiwiZXhwaXJlcyI6MTQxMjA5NTA3OX0%3D--638cdaabf024a9c6c26b1f24e97f73f4f9a86f62)
 
 ---
 
-#[fit]convention
+#[fit]pact file testing
 
-#[fit]**over**
-
-#[fit]configuration
-
----
-
-```javascript
-this.resource('posts', { path: '/posts' })
-```
-
-# PostsRoute
-# PostsController
-# PostsView
-# posts handlebars template
-
----
-
-#[fit]build tools
-
----
-
-#build tools
-
-- broccoli
-- ES6 modules
-- live reload
-- api-stub
-- test harness
-
----
-
-#[fit]testing
-
----
-
-#testing
-
-- `visit(url)`
-- `fillIn(selector, text)`
-- `click(selector)`
-- `keyEvent(selector, type, keyCode)`
-- `triggerEvent(selector, type, options)`
-
----
-
-#[fit]computed properties
-
----
-
-#computed properties
-
-```javascript
-// app/controllers/shape.js
-import Em from 'ember';
-
-export default Em.ObjectController.extend({
-  area: function() {
-    var width  = this.get('width');
-    var height = this.get('height');
-
-    return width * height;
-  }.property('width', 'height')
-});
-```
-
-```handlebars
-<!-- app/templates/shape.hbs -->
-
-<span>Area of the rectangle is {{area}}</span>
-```
-
----
-
-#[fit]what did we learn?
-
----
-
-#[fit]leave your assumptions
-
-#[fit]at the door
-
----
-
-#leave your assumptions at the door
-
----
-
-#[fit]don't fight the framework
-
----
-
-#[fit]wait for the lights
-
-^example of using ember data vs not
-
----
-
-#[fit]router is about nested templates
-
-#[fit]not necissarily nexted urls
-
----
-
-
-
-
-
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-12-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTItb24ucG5nIiwiZXhwaXJlcyI6MTQxMjA5NTA3OX0%3D--638cdaabf024a9c6c26b1f24e97f73f4f9a86f62)
 
 ---
 
@@ -974,3 +934,36 @@ Feedback
 - us estub server instead of FixtureAdapter - change slide for this
 
 - remove let client define api
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-10-off.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTAtb2ZmLnBuZyIsImV4cGlyZXMiOjE0MTIwMzE3ODd9--b1559c49b80d8aa55e9e5945f700553e2a354f42)
+
+---
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-10-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTAtb24ucG5nIiwiZXhwaXJlcyI6MTQxMjAzMTgwM30%3D--15647b50a5f4f10596ce1ba545d0d9f5a91c228d)
+
+---
+
+#let your client
+#define the api
+
+![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/lightbulbs-10-on.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2xpZ2h0YnVsYnMtMTAtb24ucG5nIiwiZXhwaXJlcyI6MTQxMjAzMTgwM30%3D--15647b50a5f4f10596ce1ba545d0d9f5a91c228d)
+
+^
+ever worked with a team that created a service for you, that didn't do what you needed and didn't return data in the format you wanted?
+
+---
+
+#a team that doesn't seem to
+#**C**are
+#'**B**out
+#**S**ervices?
+
+---
+
+^
+- build your ui well with resources defined well
+- let ember tell you what it expects from the api
+- designed by Yehdua who is one of the main proponents of jsonapi.org
+- they are trying to adhere to best practices
