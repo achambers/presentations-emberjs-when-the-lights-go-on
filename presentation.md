@@ -1,7 +1,7 @@
 
 ---
 
-#[fit]how ember saved my life
+#[fit]ember: when the lights go on
 
 ###@grandazz
 ###github.com/achambers
@@ -75,7 +75,7 @@
 
 ---
 
-![fit](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/framework-graph.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2ZyYW1ld29yay1ncmFwaC5wbmciLCJleHBpcmVzIjoxNDExOTM1MDIyfQ%3D%3D--bba39fb5825db550b5bad69f043606085a068737)
+![65%](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/framework-graph.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL2ZyYW1ld29yay1ncmFwaC5wbmciLCJleHBpcmVzIjoxNDExOTM1MDIyfQ%3D%3D--bba39fb5825db550b5bad69f043606085a068737)
 
 ---
 
@@ -473,24 +473,21 @@ var CBS = {
 -- Someone Awesome
 
 ^
-so we switched to Ember and we started to see the improvements immediately
+- a wise person once said
+- so we switched to Ember and we started to see the improvements immediately
 
 ---
 
-#consistent naming
+#convention over configuration
 
-### `Diagnostics.js`
-### `issues_index_controller.js`
+```javascript
+        this.resource('posts', { path: '/posts' })
+```
 
----
-
-#consistent naming
-
-### `controllers/alert.js`
-### `controllers/tv_issues.js`
-### `views/issues_list.js`
-### `models/issue.js`
-### `models/product.js`
+## PostsRoute
+## PostsController
+## PostsView
+## posts.hbs
 
 ---
 
@@ -702,20 +699,6 @@ function handleError(error) {
 
 ^
 if this looks familiar to you who use Rails, that is no coindidence
-
----
-
-####ember-cli
-#convention over configuration
-
-```javascript
-        this.resource('posts', { path: '/posts' })
-```
-
-## PostsRoute
-## PostsController
-## PostsView
-## posts.hbs
 
 ---
 
@@ -953,6 +936,10 @@ that data.
 #Step 2 - Verify expectations on provider
 
 ![inline](https://raw.githubusercontent.com/achambers/presentations-emberjs-when-the-lights-go-on/master/pact-provider.png?token=416724__eyJzY29wZSI6IlJhd0Jsb2I6YWNoYW1iZXJzL3ByZXNlbnRhdGlvbnMtZW1iZXJqcy13aGVuLXRoZS1saWdodHMtZ28tb24vbWFzdGVyL3BhY3QtcHJvdmlkZXIucG5nIiwiZXhwaXJlcyI6MTQxMjExMDA1NH0%3D--750255f3d072100f7a1ae3d4b2f4160e7a3f6c6c)
+
+^
+- this doesn't need to be specific to your app
+- MCS could verify against our pact files
 
 ---
 
