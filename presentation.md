@@ -1,6 +1,3 @@
-
----
-
 #[fit]ember: when the lights go on
 
 ###@grandazz
